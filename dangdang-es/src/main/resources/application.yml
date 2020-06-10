@@ -1,0 +1,13 @@
+server:
+  port: 8800
+spring:
+  application:
+    name: dangdang-es
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+springcloud-es:
+  elasticsearch:
+    hostlist: ${eshostlist:127.0.0.1:9200}

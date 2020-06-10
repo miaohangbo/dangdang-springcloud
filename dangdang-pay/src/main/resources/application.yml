@@ -1,0 +1,34 @@
+server:
+  port: 8201
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+spring:
+  application:
+    name: dangdang-pay
+  zipkin:
+    base-url: http://localhost:8700/
+  sleuth:
+    sampler:
+      probability: 1.0
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/txlcn-demo?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 59852369
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,health,info
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+tx-lcn:
+  client:
+    manager-address: 127.0.0.1:8070

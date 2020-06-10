@@ -1,0 +1,21 @@
+server:
+  port: 8500
+spring:
+  application:
+    name: dangdang-config
+  profiles:
+    active: native #使用本地存储的方式
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:properties/
+#        git:
+#          uri: https://github.com/miaohangbo/config-repo.git/ #git仓库的地址
+#          search-paths: config-repo
+#          username: miaohangbo
+#          password: Aini59852369
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/

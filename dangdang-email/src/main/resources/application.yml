@@ -1,0 +1,35 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: dangdang-email
+  sleuth:
+    sampler:
+      probability: 1.0
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    virtualHost: /
+  #邮箱配置
+  mail:
+    host: smtp.qq.com
+    username: 824238833@qq.com
+    password: zuemmqcwlzlhbbci
+    default-encoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,health,info
+  endpoint:
+    health:
+      show-details: ALWAYS

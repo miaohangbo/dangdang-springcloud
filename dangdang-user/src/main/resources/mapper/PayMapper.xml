@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qf.dao.PayMapper">
+   <!-- <update id="updateMoney" parameterType="com.qf.pojo.Pay">
+        update ar_account set money = money - #{money} where username = #{username}
+    </update>-->
+
+    <update id="insertMoney" parameterType="com.qf.pojo.TrAccount">
+        update ar_account set money = money +#{money} where username = #{toUserName}
+    </update>
+
+    <update id="receiveMoney" parameterType="com.qf.pojo.TrAccount">
+        update ar_account set money = money - #{money} where username = #{receiveUsername}
+    </update>
+</mapper>

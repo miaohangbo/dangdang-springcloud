@@ -1,0 +1,44 @@
+server:
+  port: 8100
+spring:
+  application:
+    name: dangdang-user
+  zipkin:
+    base-url: http://localhost:8700/
+  sleuth:
+    sampler:
+      probability: 1.0
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    virtualHost: /
+#feign:
+#  hystrix:
+#    enabled: true
+
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 50000
+ribbon:
+  ConnectTimeout: 500000 #请求连接的超时时间，默认时间为1秒
+  ReadTimeout: 500000 #请求处理的超时时间
+  MaxAutoRetriesNextServer: 0
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,health,info
+  endpoint:
+    health:
+      show-details: ALWAYS
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+tx-lcn:
+  client:
+    manager-address: 127.0.0.1:8070

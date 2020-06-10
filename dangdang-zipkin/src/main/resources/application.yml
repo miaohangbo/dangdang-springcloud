@@ -1,0 +1,15 @@
+server:
+  port: 8700
+spring:
+  application:
+    name: dangdang-zipkin
+#zipkin启动报错无法访问的解决方法
+management:
+    metrics:
+      web:
+        server:
+          auto-time-requests: false
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
